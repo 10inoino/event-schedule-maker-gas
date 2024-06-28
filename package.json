@@ -1,13 +1,18 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "npm run build && clasp push",
+    "prettier": "prettier --write .",
+    "format": "npm run prettier"
   },
   "devDependencies": {
     "@google/clasp": "2.4.2",
+    "@types/google-apps-script": "^1.0.83",
     "copy-webpack-plugin": "12.0.2",
     "eslint": "9.5.0",
     "gas-webpack-plugin": "2.6.0",
     "pretier": "0.0.1",
+    "prettier": "^3.3.2",
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2",
     "typescript": "5.5.2",

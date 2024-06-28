@@ -1,4 +1,5 @@
 {
-  "scriptId": "1yh4xBwhkfXKaGzbmbqXQ9rVMS-ropfgAXOh_wxG7ADwmoBE1TnDVLMsw",
-  "rootDir": "./dist"
+  "scriptId": "12Ju2C-rpBr-aIXM1M7luPJ2tK_rgLg84oUG01J4gwE-LzWCuHIZac9D2",
+  "rootDir": "./dist",
+  "parentId": ["1xj2hMwwfXhT83RaTKSmNIN9WkICq2C8SeIt7Y4e9kf8"]
 }
