@@ -1,4 +1,4 @@
-const tryCatch = <TryResult>(
+export const tryCatch = <TryResult>(
   tryCall: () => TryResult,
 ): [null, TryResult] | [Error, null] => {
   try {
