@@ -1,6 +1,18 @@
+import { ExtractContent } from "./extract-content";
+
 function test() {
-  const activeSpreadSheet = () => SpreadsheetApp.getActiveSpreadsheet();
-  const mainSheet = activeSpreadSheet().getSheetByName("シート1")!;
-  const result = mainSheet.getRange("A3").getValue();
-  Logger.log(`結果: ${result}`);
+  const mainSheet = getSheet();
+  const link = mainSheet.getRange("B3").getValue();
+  const [error, result] = tryCatch(() => UrlFetchApp.fetch(link));
+  if (error) {
+    return `URLの参照に失敗しました: "${error.message}"`;
+  }
+  const html = result.getContentText();
+  const content = new ExtractContent()
+    .analyse(html, {
+      threshold: 1,
+    })
+    .asText();
+  Logger.log(content.body);
+  fetchAiAnswer(content.title, content.body);
 }
