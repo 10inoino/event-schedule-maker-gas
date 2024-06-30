@@ -51,7 +51,7 @@ export const fetchAiAnswer = (title: string, body: string, url: string): Event[]
 }
 
 const createPrompt = (content: string): string => {
-  const prompt = `こちらは、イベントの情報を表すjsonです。
+  const prompt = `こちらは、イベントの情報を表すjsonのサンプルです。
   {
     "title": "コーヒーイベント",
     "description": "コーヒーイベントです。",
@@ -80,7 +80,7 @@ const createPrompt = (content: string): string => {
     "price": 3000
   }
   
-  こちらの記事の中に、一般人が参加可能なイベントの情報があれば、上記のjsonにしてください。
+  こちらの記事の中に、一般人が参加可能なイベントの情報があれば、上記のようなjsonにしてください。
   複数ある場合は複数のjsonを出力してください。
   わからない情報は空文字にしてください。
   終日のイベントの場合は、endAtを空文字にして、時間以降を00:00:00Zにしてください。
