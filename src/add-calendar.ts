@@ -9,10 +9,13 @@ export type Event = {
   price?: number;
 };
 
+const CALENDAR_ID =
+  PropertiesService.getScriptProperties().getProperty("CALENDAR_ID")!;
+
 export const AddCalendarEvent = (
   event: Event
 ) => {
-  const calendar = CalendarApp.getDefaultCalendar();
+  const calendar = CalendarApp.getCalendarById(CALENDAR_ID);
   if (event.endAt) {
     calendar.createEvent(event.title, new Date(event.startAt), new Date(event.endAt), {
       description: createDescription(event),
